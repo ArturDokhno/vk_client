@@ -160,8 +160,7 @@ extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
                 let name = group.name
                 self.groupSelected(gid: gid, name: name, isMember: isMember)
             }
-            leaveJoin.backgroundColor = isMember ? .red : UIColor.vkColor.main
-            return [leaveJoin]
+            leaveJoin.backgroundColor = isMember ? .red : UIColor.midnightBlue            return [leaveJoin]
         }
         return [UITableViewRowAction()]
     }

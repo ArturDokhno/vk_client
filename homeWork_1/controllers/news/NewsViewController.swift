@@ -9,6 +9,9 @@
 import UIKit
 
 class NewsViewController: UIViewController {
+    
+    private let viewModelFactory = NewsViewModelFactory()
+    private var viewModels: [NewsViewModel] = []
 
     @IBOutlet weak var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
@@ -97,7 +100,8 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as! NewsTableViewCell
-        cell.configure(feed: feeds[indexPath.row])
+//        cell.configure(feed: feeds[indexPath.row])
+        cell.configure(with: viewModels[indexPath.row])
         cell.delegate = self
         return cell
     }
@@ -155,6 +159,9 @@ extension NewsViewController: VkApiFeedsDelegate {
             tableView.reloadData()
         }
         self.feeds.append(contentsOf: feeds)
+        
+        self.viewModels = self.viewModelFactory.constructViewModels(from: feeds)
+        
         tableView.reloadData()
         //        self.addNewCells(array: feeds)
 

@@ -108,44 +108,55 @@ class NewsTableViewCell: UITableViewCell {
     }
     
     
-    func configure(feed: VkFeed) {
-        
-        labelDate.text = feed.getFeedDate()
-        labelFeedGroupHeader.text = feed.sourceName
-        
-        if feed.feedText.count == 0 {
-            labelText.pin.height(0)
-        } else {
-            labelText.pin.height(70)
-        }
-        
-        labelText.text = feed.feedText
-        labelLike.text = feed.getStringFrom(count: feed.countLikes)
-        labelViews.text = feed.getStringFrom(count: feed.countViews)
-        labelShare.text = feed.getStringFrom(count: feed.countReposts)
-        labelComment.text = feed.getStringFrom(count: feed.countComments)
-        
-        imageViewGroup.sd_setImage(with: URL(string: feed.sourceUrl), placeholderImage: UIImage(named: "noPhoto"))
-        
-        if feed.attachments.count > 0 {
-            
-            let height = self.frame.width * CGFloat(feed.attachments[0].height) / CGFloat(feed.attachments[0].width)
-            
-            imageNew.pin.height(height)
-            
-            imageNew.sd_setImage(with: URL(string: feed.attachments[0].imageUrl), placeholderImage: UIImage(named: "noPhoto"))
-            
-        } else {
-            imageNew.pin.height(0)
-        }
+//    func configure(feed: VkFeed) {
+//
+//        labelDate.text = feed.getFeedDate()
+//        labelFeedGroupHeader.text = feed.sourceName
+//
+//        if feed.feedText.count == 0 {
+//            labelText.pin.height(0)
+//        } else {
+//            labelText.pin.height(70)
+//        }
+//
+//        labelText.text = feed.feedText
+//        labelLike.text = feed.getStringFrom(count: feed.countLikes)
+//        labelViews.text = feed.getStringFrom(count: feed.countViews)
+//        labelShare.text = feed.getStringFrom(count: feed.countReposts)
+//        labelComment.text = feed.getStringFrom(count: feed.countComments)
+//
+//        imageViewGroup.sd_setImage(with: URL(string: feed.sourceUrl), placeholderImage: UIImage(named: "noPhoto"))
+//
+//        if feed.attachments.count > 0 {
+//
+//            let height = self.frame.width * CGFloat(feed.attachments[0].height) / CGFloat(feed.attachments[0].width)
+//
+//            imageNew.pin.height(height)
+//
+//            imageNew.sd_setImage(with: URL(string: feed.attachments[0].imageUrl), placeholderImage: UIImage(named: "noPhoto"))
+//
+//        } else {
+//            imageNew.pin.height(0)
+//        }
+//
+//        setNeedsLayout()
+//        layoutIfNeeded()
+//    }
+    
+    func configure(with viewModel: NewsViewModel) {
+        labelDate.text = viewModel.labelDate
+        labelFeedGroupHeader.text = viewModel.labelFeedGroupHeader
+        labelText.text = viewModel.labelText
+        labelLike.text = viewModel.labelLike
+        labelViews.text = viewModel.labelViews
+        labelShare.text = viewModel.labelShare
+        labelComment.text = viewModel.labelComment
+        imageViewGroup.image = viewModel.imageViewGroup.image
+        imageNew.image = viewModel.imageNew.image
         
         setNeedsLayout()
         layoutIfNeeded()
     }
-    
-    
-
-    
 
 }
 
