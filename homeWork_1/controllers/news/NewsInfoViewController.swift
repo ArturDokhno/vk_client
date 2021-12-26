@@ -15,6 +15,7 @@ class NewsInfoViewController: UIViewController {
     var feed = VkFeed()
     var comments = [VkComment]()
     
+    private let commentsService = CommentsAdapterProxy(comments: CommentsAdapter())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,12 @@ class NewsInfoViewController: UIViewController {
     }
     
     private func prepareGetComments() {
-        AlamofireService.instance.getComments(ownerId: feed.sourceId, postId: feed.feedId, delegate: self)
+        commentsService.getComments(ownerId: feed.sourceId,
+                                    postId: feed.feedId) { [weak self] comments in
+            self?.comments.removeAll()
+            self?.comments.append(contentsOf: comments)
+            self?.tableView.reloadData()
+        }
     }
     
 

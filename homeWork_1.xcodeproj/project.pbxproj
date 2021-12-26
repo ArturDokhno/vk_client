@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5DC3809695F037A6B111CF13 /* Pods_homeWork_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB03EE607AE3B19FD932EA7A /* Pods_homeWork_1.framework */; };
+		7530926727789C1500E48E6F /* CommentsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530926627789C1500E48E6F /* CommentsAdapter.swift */; };
+		7530926A27789E9300E48E6F /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530926927789E9300E48E6F /* NewsViewModel.swift */; };
+		7530926C27789EAC00E48E6F /* NewsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530926B27789EAC00E48E6F /* NewsViewModelFactory.swift */; };
+		753092702778A3C600E48E6F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530926F2778A3C600E48E6F /* UIColor.swift */; };
+		753092722778A73800E48E6F /* CommentsAdapterProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753092712778A73800E48E6F /* CommentsAdapterProxy.swift */; };
 		840110E021EC364C0044AEB7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840110DF21EC364C0044AEB7 /* TestViewController.swift */; };
 		84105FB3217F173D00EEF673 /* VKApiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84105FB2217F173D00EEF673 /* VKApiViewController.swift */; };
 		8415662D21B7916500AF9803 /* SearchGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415662C21B7916500AF9803 /* SearchGroupViewController.swift */; };
@@ -63,6 +68,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7530926627789C1500E48E6F /* CommentsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsAdapter.swift; sourceTree = "<group>"; };
+		7530926927789E9300E48E6F /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		7530926B27789EAC00E48E6F /* NewsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModelFactory.swift; sourceTree = "<group>"; };
+		7530926F2778A3C600E48E6F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		753092712778A73800E48E6F /* CommentsAdapterProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsAdapterProxy.swift; sourceTree = "<group>"; };
 		840110DF21EC364C0044AEB7 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		84105FB2217F173D00EEF673 /* VKApiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKApiViewController.swift; sourceTree = "<group>"; };
 		8415662C21B7916500AF9803 /* SearchGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGroupViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +150,32 @@
 				FB03EE607AE3B19FD932EA7A /* Pods_homeWork_1.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7530926527789BF300E48E6F /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				7530926627789C1500E48E6F /* CommentsAdapter.swift */,
+				753092712778A73800E48E6F /* CommentsAdapterProxy.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		7530926827789E8100E48E6F /* factory */ = {
+			isa = PBXGroup;
+			children = (
+				7530926927789E9300E48E6F /* NewsViewModel.swift */,
+				7530926B27789EAC00E48E6F /* NewsViewModelFactory.swift */,
+			);
+			path = factory;
+			sourceTree = "<group>";
+		};
+		7530926D2778A3B400E48E6F /* Flyweight */ = {
+			isa = PBXGroup;
+			children = (
+				7530926F2778A3C600E48E6F /* UIColor.swift */,
+			);
+			path = Flyweight;
 			sourceTree = "<group>";
 		};
 		840110DE21EC36150044AEB7 /* test */ = {
@@ -266,6 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				8483336721B1534000C69640 /* GoogleService-Info.plist */,
+				7530926D2778A3B400E48E6F /* Flyweight */,
+				7530926527789BF300E48E6F /* Adapter */,
 				AA5766E72160AE6C0029F786 /* cells */,
 				AA5766D72160A7060029F786 /* controllers */,
 				AA5766F32160DE980029F786 /* custom */,
@@ -356,6 +394,7 @@
 		AA5766E72160AE6C0029F786 /* cells */ = {
 			isa = PBXGroup;
 			children = (
+				7530926827789E8100E48E6F /* factory */,
 				84D1DEC321AE9258006FC20E /* comment */,
 				AA5766E82160AE740029F786 /* friends */,
 				84C120992161C6C90044CBEB /* groups */,
@@ -565,9 +604,11 @@
 				AA5766F22160DBA70029F786 /* FriendHeaderTableViewCell.swift in Sources */,
 				AA5766EE2160CB9C0029F786 /* FriendCollectionViewCell.swift in Sources */,
 				842A0408216DB83F00FAFF92 /* CustomSearchBar.swift in Sources */,
+				7530926727789C1500E48E6F /* CommentsAdapter.swift in Sources */,
 				8442ABAB2192EC0E003DDA6A /* VkResponseParser.swift in Sources */,
 				AA3D1EB121B25109000ED1C1 /* FirebaseService.swift in Sources */,
 				842A03E0216C860000FAFF92 /* CustomIndicator.swift in Sources */,
+				7530926A27789E9300E48E6F /* NewsViewModel.swift in Sources */,
 				8415662D21B7916500AF9803 /* SearchGroupViewController.swift in Sources */,
 				84D1DEC021AE8AB9006FC20E /* VkCommentProfile.swift in Sources */,
 				84A74D8321EDC12900AE5A76 /* NewsTableViewCell.swift in Sources */,
@@ -579,17 +620,20 @@
 				8424E54D217485B400188E61 /* CustomSquareIndicator.swift in Sources */,
 				AA5766FF2160F2CD0029F786 /* New.swift in Sources */,
 				8424E564217EFD2200188E61 /* LoginVkViewController.swift in Sources */,
+				753092702778A3C600E48E6F /* UIColor.swift in Sources */,
 				8424E55321773AC200188E61 /* CustomPushAnimator.swift in Sources */,
 				8424E55E21774C8F00188E61 /* CustomUnwindSegue.swift in Sources */,
 				8424E5512176E7D900188E61 /* CustomSegue.swift in Sources */,
 				AA5766F02160D82B0029F786 /* FriendList.swift in Sources */,
 				84EC564A21A2A2DB00C8542C /* VkFeed.swift in Sources */,
+				7530926C27789EAC00E48E6F /* NewsViewModelFactory.swift in Sources */,
 				8424E55C2177401700188E61 /* CustomNavigationController.swift in Sources */,
 				AA5766FA2160EFE50029F786 /* NewsTableViewCellOld.swift in Sources */,
 				8442ABB021957D2D003DDA6A /* RealmWorker.swift in Sources */,
 				AA5766EC2160B5A10029F786 /* FriendInfoViewController.swift in Sources */,
 				840110E021EC364C0044AEB7 /* TestViewController.swift in Sources */,
 				8424E560217845B700188E61 /* CustomInteractiveTransition.swift in Sources */,
+				753092722778A73800E48E6F /* CommentsAdapterProxy.swift in Sources */,
 				AA5766E12160AC5B0029F786 /* FriendsViewController.swift in Sources */,
 				AA5766E62160AD8C0029F786 /* Friend.swift in Sources */,
 				84D1DEC521AE926B006FC20E /* CommentTableViewCell.swift in Sources */,
